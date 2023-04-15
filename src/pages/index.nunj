@@ -68,6 +68,7 @@
 
 		</div>
 
-		<img src="assets/images/product-jacket.png" alt="" class="gallery__thumb">
+		<img src="assets/images/jacket.png" alt="" class="gallery__thumb">
+		<img src="assets/images/sneakers.png" alt="" class="gallery__thumb">
 	</div>
 {% endblock %}
