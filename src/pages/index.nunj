@@ -61,12 +61,13 @@
 			<h2 style="margin-bottom: 15px;">Пример использования SVG-спрайта</h2>
 
 			{{ icon({
-				iconName: 'chat',
+				iconName: 'bell',
 				className: 'icon',
 				attributes: 'viewBox="0 0 20 20" style="width: 40px; height: 40px; fill: #212121;"'
 			}) }}
 
 		</div>
 
+		<img src="assets/images/product-jacket.png" alt="" class="gallery__thumb">
 	</div>
 {% endblock %}
