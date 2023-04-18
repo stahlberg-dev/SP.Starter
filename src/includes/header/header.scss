@@ -1,4 +1,164 @@
 .header {
-	padding: 20px 0;
-	background: #ccc;
+	position: fixed;
+	width: 100%;
+	min-width: $minWidth;
+	z-index: 100;
+	background-color: $secondaryColor;
+
+	&__container {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 81px;
+		border-bottom: 1px solid $borderColor;
+		padding: 8px 10px 5px;
+
+		@media (min-width: $tablet) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+
+	&__logo {
+		flex: 0 0 89px;
+		height: 32px;
+	}
+
+	&__logo-icon {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__menu {
+		flex: 1 1 auto;
+	}
+
+	&__search-opener {
+		flex: 0 0 24px;
+		height: 24px;
+		transform: translateY(1px);
+		margin-right: 26px;
+		fill: $primaryTextColor;
+		cursor: pointer;
+		transition: fill 0.3s ease, transform 0.3s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				fill: $primaryColor;
+			}
+		}
+
+		&:active {
+			transform: translateY(4px);
+		}
+	}
+
+	&__search-opener-icon {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__cart {
+		position: relative;
+		flex: 0 0 24px;
+		height: 21px;
+		transform: translateY(2px);
+		margin-right: 32px;
+		fill: $primaryTextColor;
+		cursor: pointer;
+		transition: fill 0.3s ease, transform 0.3s ease;
+
+		@media (min-width: $desktop) {
+			margin-right: 6px;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				fill: $primaryColor;
+			}
+		}
+
+		&:active {
+			transform: translateY(5px);
+		}
+	}
+
+	&__cart-icon {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__cart-counter {
+		display: flex;
+		position: absolute;
+		top: -6px;
+		right: -6px;
+		justify-content: center;
+		align-items: center;
+		width: 13px;
+		height: 13px;
+		border-radius: 50%;
+		background-color: $primaryColor;
+	}
+
+	&__cart-counter-value {
+		line-height: 1;
+		font-size: 10px;
+		font-weight: 400;
+		color: $secondaryColor;
+	}
+
+	&__burger {
+		position: relative;
+		flex: 0 0 29px;
+		width: 29px;
+		height: 22px;
+		transform: translateY(2px);
+		cursor: pointer;
+
+		@media (min-width: $desktop) {
+			display: none;
+		}
+	}
+
+	&__burger-stripe {
+		position: absolute;
+		top: 10px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $primaryTextColor;
+		pointer-events: none;
+		transition: all 0.3s ease;
+
+		.header__burger_active & {
+			transform: scale(0);
+		}
+
+		&_position-top {
+			transform: translateY(-10px) rotate(0deg);
+
+			.header__burger_active & {
+				transform: translateY(0px) rotate(-45deg);
+			}
+		}
+
+		&_position-bottom {
+			transform: translateY(10px) rotate(0deg);
+
+			.header__burger_active & {
+				transform: translateY(0px) rotate(45deg);
+			}
+		}
+
+		@media (any-hover: hover) {
+			.header__burger:hover & {
+				background-color: $primaryColor;
+			}
+		}
+	}
 }

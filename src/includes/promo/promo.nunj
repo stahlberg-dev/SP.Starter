@@ -1,0 +1,15 @@
+{% from "../../components/button/button.nunj" import button %}
+
+<div class="promo">
+	<div class="promo__container">
+        <h2 class="promo__title title">Promo code</h2>
+        <form class="promo__form" action="#" method="POST">
+            <input class="promo__input input" type="text" name="promocode" required placeholder="Placeholder Text">
+            {{ button({
+                type: 'submit',
+                className: 'promo__button',
+                children: 'Apply'
+            }) }}
+        </form>
+    </div>
+</div>

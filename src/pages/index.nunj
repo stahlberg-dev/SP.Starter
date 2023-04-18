@@ -1,4 +1,4 @@
-{% extends "../templates/base.nunj" %}
+{% extends "../templates/checkout.nunj" %}
 
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/icon/icon.nunj" import icon %}
@@ -7,68 +7,75 @@
 {# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
 {# {% block title %}Home / {{ super() }}{% endblock title %} #}
 
-{% block content %}
+{% block main %}
 
-	{% include '../includes/header/header.nunj' %}
-
-	<div class="container">
-
-		<div style="padding:20px 0;">
-			{{ button({
-				className: '',
-				children: 'Buy something',
-				chevronRight: true
-			}) }}
-		</div>
-
-		<div style="padding:20px 0;">
-
-			<h2 style="margin-bottom: 15px;">Пример использования циклов и функции range():</h2>
-
-			<div class="row">
-				{% for i in range(1, 13)  %}
-					<span>{{ i }}</span>
-				{% endfor %}
-			</div>
-
-		</div>
-
-		<div style="padding:20px 0;">
-
-			<h2 style="margin-bottom: 15px;">Пример с переменными:</h2>
-
-			{% for item in someData %}
-				<div style="margin-bottom: 15px;">
-					<h3>{{ item.title }}</h3>
-					<p>{{ item.text }}</p>
-				</div>
-			{% endfor %}
-
-		</div>
-
-		{# Пример с функциями #}
-		<p style="margin-bottom: 20px;">{{ addAwesome('Это текст для теста функций') }}</p>
-
-		{% if DEVELOP %}
-			<div class="debug" style="margin-bottom: 20px;">
-				<h2 style="margin-bottom: 15px;">Debug:</h2>
-				<p>Эта информация будет выводиться только при DEVELOP = true.</p>
-			</div>
-		{% endif %}
-
-		<div style="padding:20px 0;">
-
-			<h2 style="margin-bottom: 15px;">Пример использования SVG-спрайта</h2>
-
-			{{ icon({
-				iconName: 'bell',
-				className: 'icon',
-				attributes: 'viewBox="0 0 20 20" style="width: 40px; height: 40px; fill: #212121;"'
-			}) }}
-
-		</div>
-
-		<img src="assets/images/jacket.png" alt="" class="gallery__thumb">
-		<img src="assets/images/sneakers.png" alt="" class="gallery__thumb">
+	<div style="padding:20px 0;">
+		{{ button({
+			className: '',
+			children: 'Buy something',
+			chevronRight: true
+		}) }}
 	</div>
-{% endblock %}
+
+	<div style="padding:20px 0;">
+
+		<h2 style="margin-bottom: 15px;">Пример использования циклов и функции range():</h2>
+
+		<div class="row">
+			{% for i in range(1, 13)  %}
+				<span>{{ i }}</span>
+			{% endfor %}
+		</div>
+
+	</div>
+
+	<div style="padding:20px 0;">
+
+		<h2 style="margin-bottom: 15px;">Пример с переменными:</h2>
+
+		{% for item in someData %}
+			<div style="margin-bottom: 15px;">
+				<h3>{{ item.title }}</h3>
+				<p>{{ item.text }}</p>
+			</div>
+		{% endfor %}
+
+	</div>
+
+	{# Пример с функциями #}
+	<p style="margin-bottom: 20px;">{{ addAwesome('Это текст для теста функций') }}</p>
+
+	{% if DEVELOP %}
+		<div class="debug" style="margin-bottom: 20px;">
+			<h2 style="margin-bottom: 15px;">Debug:</h2>
+			<p>Эта информация будет выводиться только при DEVELOP = true.</p>
+		</div>
+	{% endif %}
+
+	<div style="padding:20px 0;">
+
+		<h2 style="margin-bottom: 15px;">Пример использования SVG-спрайта</h2>
+
+		{{ icon({
+			iconName: 'bell',
+			className: 'icon',
+			attributes: 'viewBox="0 0 20 20" style="width: 40px; height: 40px; fill: #212121;"'
+		}) }}
+
+	</div>
+
+	<img src="assets/images/jacket.png" alt="" class="gallery__thumb">
+	<img src="assets/images/sneakers.png" alt="" class="gallery__thumb">
+
+{% endblock main %}
+
+{% block aside %}
+
+	{% include '../includes/basket/basket.nunj' %}
+
+	{% include '../includes/promo/promo.nunj' %}
+	
+	{% include '../includes/cost/cost.nunj' %}
+
+
+{% endblock aside %}

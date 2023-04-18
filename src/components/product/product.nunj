@@ -1,0 +1,42 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro product(props, className) %}
+<div class="product{% if className %} {{ className }}{% endif %}">
+    <div class="product__container">
+        <a href="#!" class="product__image">
+            <img src="assets/images/products/{{ props.photoName }}" alt="" class="product__photo">
+        </a>
+        <div class="product__info">
+            <div class="product__name">
+                {{ props.productName }}
+            </div>
+            <div class="product__price-counter">
+                <div class="product__counter">
+                    <button type="button" class="product__counter-minus">
+                        {{ icon({
+                            iconName: 'minus',
+                            className: 'product__counter-minus-icon'
+                        }) }}
+                    </button>
+                    <div class="product__number">{{ props.startNumber }}</div>
+                    <button type="button" class="product__counter-plus">
+                        {{ icon({
+                            iconName: 'plus',
+                            className: 'product__counter-plus-icon'
+                        }) }}
+                    </button>
+                </div>
+                <div class="product__price">
+                    $ <span class="product__price-value">{{ props.productPrice }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="product__close">
+            {{ icon({
+                iconName: 'close',
+                className: 'product__close-icon'
+            }) }}
+        </div>
+    </div>
+</div>
+{% endmacro %}

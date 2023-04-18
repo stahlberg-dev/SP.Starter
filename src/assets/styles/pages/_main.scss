@@ -1,0 +1,27 @@
+.title {
+	line-height: 21px;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.input {
+	height: 40px;
+	border-radius: 3px;
+	padding: 8px 10px;
+	line-height: 24px;
+	font-size: 14px;
+	font-weight: 400;
+	background-color: $thirdColor;
+	color: $primaryTextColor;
+
+	&::placeholder {
+		color: $placeholderColor;
+		transition: color 0.3s ease;
+	}
+
+	&:focus {
+		&::placeholder {
+			color: transparent;
+		}
+	}
+}

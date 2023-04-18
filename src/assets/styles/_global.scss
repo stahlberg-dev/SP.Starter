@@ -70,7 +70,7 @@
 
 .transition-active {
 	transition: color $default-transition-duration $default-transition-function,
-		background $default-transition-duration $default-transition-function,
+		background-color $default-transition-duration $default-transition-function,
 		border-color $default-transition-duration $default-transition-function;
 }
 

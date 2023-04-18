@@ -1,0 +1,29 @@
+<div class="cost">
+	<div class="cost__container">
+        <div class="cost__item">
+            <div class="cost__item-title">Subtotal</div>
+                <div class="cost__item-sum">
+                    $<span class="cost__item-value">1 050</span>
+                </div>
+            </div>
+        <div class="cost__item">
+            <div class="cost__item-title">Tax</div>
+                <div class="cost__item-sum">
+                    $<span class="cost__item-value">100</span>
+                </div>
+            </div>
+        <div class="cost__item">
+            <div class="cost__item-title">Shipping</div>
+                <div class="cost__item-sum">
+                    $<span class="cost__item-value">150</span>
+                </div>
+            </div>
+        <div class="cost__item cost__item_total">
+            <div class="cost__item-title">Total</div>
+                <div class="cost__item-sum">
+                    $<span class="cost__item-value"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

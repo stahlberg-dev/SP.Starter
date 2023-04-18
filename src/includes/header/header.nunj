@@ -1,7 +1,43 @@
+{% from "../../components/icon/icon.nunj" import icon %}
 {% from "../../components/menu/menu.nunj" import menu %}
 
 <div class="header">
-	<div class="container">
-		{{ menu() }}
+	<div class="header__container">
+
+		<a href="index.html" class="header__logo">
+			{{ icon({
+				iconName: 'logo',
+				className: 'header__logo-icon'
+			}) }}
+        </a>
+
+		{{ menu({
+			className: 'header__menu'
+		}) }}
+
+		<div class="header__search-opener">
+			{{ icon({
+				iconName: 'search',
+				className: 'header__search-opener-icon'
+			}) }}
+		</div>
+
+		<div class="header__cart">
+			{{ icon({
+				iconName: 'cart',
+				className: 'header__cart-icon'
+			}) }}
+
+			<div class="header__cart-counter">
+				<span class="header__cart-counter-value">2</span>
+			</div>
+		</div>
+
+		<div class="header__burger">
+			<span class="header__burger-stripe header__burger-stripe_position-top"></span>
+			<span class="header__burger-stripe"></span>
+			<span class="header__burger-stripe header__burger-stripe_position-bottom"></span>
+		</div>
+
 	</div>
 </div>

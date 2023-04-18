@@ -9,9 +9,14 @@
 
 // ======= COMPONENTS =======
 @import '../../components/button/button';
+@import '../../components/menu/menu';
+@import '../../components/product/product';
 
 // ======= INCLUDES =======
 @import '../../includes/header/header';
+@import '../../includes/basket/basket';
+@import '../../includes/promo/promo';
+@import '../../includes/cost/cost';
 
 // ======= PAGES =======
 @import 'pages/main';

@@ -1,0 +1,155 @@
+.product {
+	overflow: hidden;
+	transition: max-height 0.4s ease;
+
+	@media (min-width: $desktop) {
+		width: 100%;
+	}
+
+	&__container {
+		display: flex;
+		position: relative;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: stretch;
+		gap: 12px;
+		width: 100%;
+
+		@media (min-width: $desktop) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__image {
+		position: relative;
+		flex: 0 0 100px;
+		height: 100px;
+		border-radius: 3px;
+	}
+
+	&__photo {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__info {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		align-items: stretch;
+		gap: 15px;
+		flex: 1 1 auto;
+	}
+
+	&__name {
+		max-width: 155px;
+		flex: 1 1 auto;
+		line-height: 16px;
+		font-size: 14px;
+	}
+
+	&__price-counter {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		gap: 25px;
+		flex: 0 0 auto;
+		margin-bottom: 33px;
+	}
+
+	&__counter {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 5px;
+		flex: 0 0 83px;
+	}
+
+	&__counter-minus,
+	&__counter-plus {
+		width: 20px;
+		height: 20px;
+		background-color: transparent;
+		fill: $primaryTextColor;
+		cursor: pointer;
+		transition: fill 0.3s ease, transform 0.3s ease;
+
+		&_disabled {
+			fill: $borderColor;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				fill: $primaryColor;
+			}
+
+			&_disabled:hover {
+				fill: $borderColor;
+			}
+		}
+
+		&:active {
+			transform: translateY(3px);
+		}
+
+		&_disabled:active {
+			transform: translateY(0px);
+		}
+	}
+
+	.product__counter-minus_disabled {
+		fill: $borderColor;
+	}
+
+	&__counter-minus-icon,
+	&__counter-plus-icon {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__number {
+		line-height: 16px;
+		font-size: 14px;
+	}
+
+	&__price {
+		white-space: nowrap;
+		line-height: 16px;
+		font-size: 14px;
+	}
+
+	&__price-value {
+	}
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 18px;
+		height: 18px;
+		fill: $borderColor;
+		cursor: pointer;
+		transition: fill 0.3s ease, transform 0.3s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				fill: $primaryTextColor;
+			}
+		}
+
+		&:active {
+			transform: translateY(3px);
+		}
+	}
+
+	&__close-icon {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+}

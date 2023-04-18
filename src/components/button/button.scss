@@ -1,35 +1,51 @@
 .button {
-	@extend .transition-active;
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	border: 2px solid rgba(#000, 0.3);
-	height: 54px;
-	font-weight: 700;
-	cursor: pointer;
-	font-size: 16px;
-	letter-spacing: -0.5px;
-	padding: 1px 20px 0;
+	align-items: center;
+	height: 40px;
+	border-radius: 3px;
+	padding: 0;
+	transition: background-color 0.3s ease, transform 0.3s ease;
 
-	&:hover {
-		background-color: rgba(#000, 0.3);
-		color: rgba(#000, 0.8);
-		transition: none;
-	}
+	&_type_submit {
+		border: none;
+		background-color: $primaryColor;
 
-	&:active {
-		background-color: rgba(#000, 0.25);
-		border-color: rgba(#000, 0.25);
-
-		.button__chevron-right {
-			transform: translateX(1px);
-			transition: none;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #053ce0;
+			}
 		}
 	}
 
-	&__chevron-right {
-		margin-left: 5px;
-		transition: transform 0.1s ease-out,
-			fill $default-transition-duration $default-transition-function;
+	&_type_link {
+		background-color: transparent;
+		border: 1px solid $borderColor;
+		transition: border-color 0.3s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: $primaryColor;
+			}
+		}
+	}
+
+	&:active {
+		transform: translateY(4px);
+	}
+
+	&__text {
+		line-height: 24px;
+		font-family: $primaryFont;
+		font-size: 14px;
+		font-weight: 400;
+
+		.button_type_submit & {
+			color: $secondaryColor;
+		}
+
+		.button_type_link & {
+			color: $primaryTextColor;
+		}
 	}
 }

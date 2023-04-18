@@ -16,7 +16,10 @@ class ProjectApp {
 		this.classes = {
 			// Signal: require('./classes/Signal').default,
 		};
-		this.components = {};
+		this.components = {
+			clickBurger: require('./components/burger').default,
+			counter: require('./components/counter').default,
+		};
 		this.helpers = {};
 		this.modules = {};
 		document.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +29,9 @@ class ProjectApp {
 }
 
 global.ProjectApp = new ProjectApp();
+
+global.ProjectApp.components.clickBurger();
+global.ProjectApp.components.counter();
 
 if (module.hot) {
 	module.hot.accept();

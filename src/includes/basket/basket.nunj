@@ -1,0 +1,10 @@
+{% from "../../components/product/product.nunj" import product %}
+
+<div class="basket">
+	<h2 class="basket__title title">My basket <span class="basket__title-empty">is empty</span></h2>
+
+    {% for item in products %}
+        {{ product(item, 'basket__product') }}
+	{% endfor %}
+
+</div>

@@ -1,0 +1,18 @@
+.basket {
+	padding: 40px 40px 0px;
+	border-bottom: 1px solid $borderColor;
+
+	&__title {
+		@media (min-width: $desktop) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__title-empty {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	&__product {
+	}
+}

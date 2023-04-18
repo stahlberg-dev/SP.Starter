@@ -1,9 +1,33 @@
 .wrapper {
-	position: relative;
+	display: flex;
+	flex-flow: column nowrap;
+	min-width: $minWidth;
+	min-height: 100%;
 }
 
-.container {
-	max-width: 980px;
-	margin: auto;
-	box-sizing: content-box;
+.checkout-page {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+
+	&__main {
+		flex: 1 1 auto;
+		padding: 141px 10px 30px;
+
+		@media (min-width: $tablet) {
+			padding: 141px 50px 40px;
+		}
+	}
+
+	&__aside {
+		display: none;
+
+		@media (min-width: $desktop) {
+			display: block;
+			flex: 0 0 410px;
+			width: 100%;
+			padding: 81px 0px 40px;
+			border-left: 1px solid $borderColor;
+		}
+	}
 }

@@ -13,6 +13,20 @@
 			"path": "#"
 		}
 	],
+	"products": [
+		{
+			"photoName": "prod-code-0001.png",
+			"productName": "Amet minim mollit non deserunt ullamco est sit",
+			"productPrice": "525",
+			"startNumber": "1"
+		},
+		{
+			"photoName": "prod-code-0002.png",
+			"productName": "Amet minim mollit non",
+			"productPrice": "525",
+			"startNumber": "1"
+		}
+	],
 	"someData": [
 		{
 			"title": "Item 1",

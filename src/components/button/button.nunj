@@ -1,8 +1,11 @@
 {% macro button(props) %}
-<button class="button{% if props.className %} {{ props.className }}{% endif %}">
-	{{ props.children }}
-	{% if props.chevronRight %}
-	<span class="button__chevron-right">&gt;</span>
-	{% endif %}
-</button>
+	{% if props.type == 'submit' %}
+		<button type="submit" class="button button_type_submit{% if props.className %} {{ props.className }}{% endif %}">
+			<span class="button__text">{{ props.children }}</span>
+		</button>
+	{% elseif props.type == 'link' %}
+		<a href="{% if props.className %} {{ props.className }} {% else %}#{% endif %}" class="button button_type_link{% if props.className %} {{ props.className }}{% endif %}">
+			<span class="button__text">{{ props.children }}</span>
+		</a>
+	{% endif %} 
 {% endmacro %}
