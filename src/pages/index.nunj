@@ -3,18 +3,20 @@
 {% from "../components/button/button.nunj" import button %}
 {% from "../components/icon/icon.nunj" import icon %}
 
+{% set page  = 3 %}
+
 {# Пример расширения существующего блока #}
 {# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
 {# {% block title %}Home / {{ super() }}{% endblock title %} #}
 
 {% block main %}
 
-	<div style="padding:20px 0;">
-		{{ button({
-			className: '',
-			children: 'Buy something',
-			chevronRight: true
-		}) }}
+	<div class="checkout-page__main-top">
+		{% include '../includes/progress/progress.nunj' %}
+	</div>
+
+	<div class="checkout-page__main-center">
+		{% include '../includes/billing/billing.nunj' %}
 	</div>
 
 	<div style="padding:20px 0;">
@@ -52,20 +54,6 @@
 		</div>
 	{% endif %}
 
-	<div style="padding:20px 0;">
-
-		<h2 style="margin-bottom: 15px;">Пример использования SVG-спрайта</h2>
-
-		{{ icon({
-			iconName: 'bell',
-			className: 'icon',
-			attributes: 'viewBox="0 0 20 20" style="width: 40px; height: 40px; fill: #212121;"'
-		}) }}
-
-	</div>
-
-	<img src="assets/images/jacket.png" alt="" class="gallery__thumb">
-	<img src="assets/images/sneakers.png" alt="" class="gallery__thumb">
 
 {% endblock main %}
 
@@ -74,7 +62,7 @@
 	{% include '../includes/basket/basket.nunj' %}
 
 	{% include '../includes/promo/promo.nunj' %}
-	
+
 	{% include '../includes/cost/cost.nunj' %}
 
 

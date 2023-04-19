@@ -1,0 +1,18 @@
+<div class="billing">
+    <h1 class="billing__title title">Billing Information</h1>
+    <div class="billing__payment-systems">
+        <div class="billing__system billing__system_active">
+            <div class="billing__system-checkbox"></div>
+            <div class="billing__system-name">Pay with Credit Card</div>
+        </div>
+        <div class="billing__system">
+            <div class="billing__system-checkbox"></div>
+            <div class="billing__system-name">
+                {{ icon({
+                    iconName: 'paypal',
+                    className: 'billing__system-icon'
+                }) }}
+            </div>
+        </div>
+    </div>
+</div>

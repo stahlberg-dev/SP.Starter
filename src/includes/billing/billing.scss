@@ -1,0 +1,79 @@
+.billing {
+	&__title {
+		margin-bottom: 22px;
+
+		@media (min-width: $tablet) {
+			margin-left: 30px;
+			margin-bottom: 41px;
+		}
+	}
+
+	&__payment-systems {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 22px;
+
+		@media (min-width: $tablet) {
+			gap: 82px;
+			margin-left: 30px;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__system {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 9px;
+	}
+
+	&__system-checkbox {
+		position: relative;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		border: 1px solid $borderColor;
+		cursor: pointer;
+		transition: border-color 0.3s ease;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: transparent;
+			transition: background-color 0.3s ease;
+
+			.billing__system_active & {
+				background-color: $primaryColor;
+			}
+		}
+
+		@media (any-hover: hover) {
+			.billing__system:hover & {
+				border-color: $placeholderColor;
+			}
+		}
+	}
+
+	&__system-name {
+		white-space: nowrap;
+		line-height: 16px;
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	&__system-icon {
+		display: block;
+		width: 90px;
+		height: 23px;
+	}
+}

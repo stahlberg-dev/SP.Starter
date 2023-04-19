@@ -1,0 +1,23 @@
+<div class="progress">
+	{% for i in range(1, 5)  %}
+        <div class="progress__step{% if i == page %} progress__step_type_active
+                    {% elseif i < page %} progress__step_type_prev
+                    {% elseif i > page %} progress__step_type_next{% endif %}">
+            <span class="progress__step-number">{{ i }}</span>
+            <div class="progress__step-title">
+                {% if i == 1 %}
+                    Account
+                {% elseif i == 2 %}
+                    Shipping
+                {% elseif i == 3 %}
+                    Billing
+                {% elseif i == 4 %}
+                    Review
+                {% endif %}
+            </div>
+        </div>
+        {% if i !== 4 %}
+            <div class="progress__step-line{% if i >= page %} progress__step-line_next{% endif %}"></div>
+        {% endif %}
+    {% endfor %}
+</div>
