@@ -15,4 +15,72 @@
             </div>
         </div>
     </div>
+    <div class="billing__form-wrapper">
+        <form class="billing__form" action="#" method="POST">
+            <fieldset name="carddata" class="billing__inputs">
+                <label class="billing__form-label">
+                    <div class="billing__form-label-text">
+                        Name on card
+                    </div>
+                    <input class="billing__form-input input" type="text" name="cardname" required placeholder="Placeholder Text">
+                </label>
+                <div class="billing__card-number">
+                    <label class="billing__form-label billing__form-label_number">
+                        <div class="billing__form-label-text">
+                           Card number
+                        </div>
+                        <input class="billing__form-input input" type="text" name="cardnumber1" required>
+                    </label>
+                    <input class="billing__form-input billing__form-input_number input" type="text" name="cardnumber2" required>
+                    <input class="billing__form-input billing__form-input_number input" type="text" name="cardnumber3" required>
+                    <input class="billing__form-input billing__form-input_number input" type="text" name="cardnumber4" required>
+                </div>   
+                <div class="billing__card-date-code">
+                    <label class="billing__form-label billing__form-label_date-code">
+                        <div class="billing__form-label-text">
+                           Expire date
+                        </div>
+                        <input class="billing__form-input input" type="text" name="carddate" required>
+                    </label>
+                    <label class="billing__form-label billing__form-label_date-code">
+                        <div class="billing__form-label-text billing__form-label-text_date-code">
+                           <span>CVV code</span>
+                            <a href="#" class="billing__form-label-text-link">
+                                <span class="billing__form-label-question">?</span>
+                            </a>
+                        </div>
+                        <input class="billing__form-input input" type="text" name="cvv" required>
+                    </label>
+                </div>  
+            </fieldset>
+            <label class="billing__checkbox-item">
+                    <input type="checkbox" class="billing__checkbox-input" name="save" checked> 
+                    <div class="billing__checkbox"></div>
+                    <div class="billing__checkbox-text">
+                        Save information of this credit card
+                    </div>
+            </label>
+            <label class="billing__checkbox-item">
+                    <input type="checkbox" class="billing__checkbox-input" name="accept" required> 
+                    <div class="billing__checkbox"></div>
+                    <div class="billing__checkbox-text">
+                        I accept the <a href="#" class="billing__checkbox-text-link">terms
+                        and conditions</a> and&nbsp;the&nbsp;<a href="#" class="billing__checkbox-text-link">Privacy Policies</a>
+                    </div>
+            </label>
+            <div class="billing__buttons">
+                {{ button({
+                    type: 'link',
+                    href:'#',
+                    className: 'billing__back',
+                    children: 'Back'
+                }) }}
+                {{ button({
+                    type: 'submit',
+                    className: 'billing__check-out',
+                    children: 'Check Out'
+                }) }}
+            </div>
+        </form>
+    </div>
 </div>

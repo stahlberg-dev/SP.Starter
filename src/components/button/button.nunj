@@ -4,7 +4,7 @@
 			<span class="button__text">{{ props.children }}</span>
 		</button>
 	{% elseif props.type == 'link' %}
-		<a href="{% if props.className %} {{ props.className }} {% else %}#{% endif %}" class="button button_type_link{% if props.className %} {{ props.className }}{% endif %}">
+		<a href="{% if props.href %} {{ props.href }} {% else %}#{% endif %}" class="button button_type_link{% if props.className %} {{ props.className }}{% endif %}">
 			<span class="button__text">{{ props.children }}</span>
 		</a>
 	{% endif %} 
